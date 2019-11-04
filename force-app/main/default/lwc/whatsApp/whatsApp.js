@@ -32,10 +32,6 @@ export default class whatsApp extends LightningElement {
                 variant: "success"
               })
             );
-
-            //startConfetti();
-            //console.log("after confetti......");
-            //confetti.toggleConfetti();
           } else {
             this.dispatchEvent(
               new ShowToastEvent({
