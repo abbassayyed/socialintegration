@@ -6,6 +6,7 @@
     <lightning-card title="WhatsApp">       
         <lightning-input class="slds-p-around_large" type="Phone" onchange={phoneChangeHandler} required value={phone} label="Enter Whatsapp Number (With CountryCode)"></lightning-input>
         <lightning-input class="slds-p-around_large" type="TextArea"  onchange={textChangeHandler} required value={text} label="Enter Message"></lightning-input><br>
-        <lightning-button class="slds-align_absolute-center" onclick={sendButtonHandler} label="Send" variant="brand"></lightning-button>
+        <lightning-button class="slds-align_absolute-center" onclick={sendButtonHandler} label="Send" variant="brand"></lightning-button><br>
+
     </lightning-card>
 </template>

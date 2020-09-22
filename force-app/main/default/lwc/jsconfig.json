@@ -3,11 +3,11 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
+            "c/tableExcel": [
+                "tableExcel/tableExcel.js"
+            ],
             "c/whatsApp": [
                 "whatsApp/whatsApp.js"
-            ],
-            "c/WhatsApp": [
-                "WhatsApp/WhatsApp.js"
             ]
         }
     },
@@ -18,6 +18,11 @@
     "typeAcquisition": {
         "include": [
             "jest"
+        ]
+    },
+    "paths": {
+        "c/*": [
+            "*"
         ]
     }
 }

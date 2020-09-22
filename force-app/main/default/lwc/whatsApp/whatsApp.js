@@ -3,7 +3,7 @@ import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import callTwilioWhatsAppAPI from "@salesforce/apex/TestTwilioWhatsappAPI.callTwilioWhatsAppAPI";
 
 export default class whatsApp extends LightningElement {
-  //console.log("ShowEvnt-->"+ new ShowToastEvent());
+  
   @track text = "";
   @track phone = "";
   @track showSpinner = false;
@@ -17,8 +17,6 @@ export default class whatsApp extends LightningElement {
 
   sendButtonHandler() {
     this.showSpinner = true;
-    console.log("Text-->" + JSON.stringify(this.text));
-    console.log("Phone-->" + JSON.stringify(this.phone));
     if (this.phone !== undefined && this.text !== undefined) {
       callTwilioWhatsAppAPI({ message: this.text, destNumber: this.phone })
         .then(response => {

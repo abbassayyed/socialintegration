@@ -1,0 +1,24 @@
+
+
+
+String key='258221848721-kn14pr7avkenqrqp9agcg85g6pk34t3h.apps.googleusercontent.com'; 
+String secret='d2C7t1_cbD9vuIHePNwQmYY5';
+String refresh_token = '1//04Pg27pB-rblCCgYIARAAGAQSNwF-L9IrcWQFO5wI2hkwf-pT0-f_o1nmk71jF8pywXl0Y8G45FhEIJIdQsjsjqhjTNYLlBBkzmE';
+String redirect_uri='https://'+system.Url.getSalesforceBaseUrl().getHost() +'/lightning/cmp/c__TreeGoogleDriveConnect';
+HttpRequest req = new HttpRequest();
+//req.setEndpoint('https://www.googleapis.com/oauth2/v4/token');
+req.setEndpoint('https://accounts.google.com/o/oauth2/token');
+//https://oauth2.googleapis.com/token
+req.setHeader('content-type', 'application/x-www-form-urlencoded');
+//String messageBody = 'code='+code+'&client_id='+key+'&client_secret='+secret+'&redirect_uri='+redirect_uri+'&grant_type=authorization_code'; //
+String messageBody = 'client_id='+key+'&client_secret='+secret+'&redirect_uri='+redirect_uri+'&grant_type=refresh_token'+'&refresh_token'+refresh_token; 
+req.setHeader('Content-length', String.valueOf(messageBody.length()));
+req.setHeader('Host','www.googleapis.com');
+//system.debug('******Access token body *****>>>'+messageBody);
+req.setBody(messageBody);
+req.setTimeout(60 * 1000);
+req.setMethod('POST');
+Http h = new Http();
+HttpResponse res = h.send(req);
+System.debug('RESP-------->'+res);
+System.debug('RESP Body-------->'+res.getBody());
